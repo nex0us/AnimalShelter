@@ -18,8 +18,8 @@ private:
     string color;
     string health;
     string sound;
-    Animal(string, string, int, int, string, string, string, string);
 public:
+    Animal(string, string, int, int, string, string, string, string);
     void setType(string);
     void setName(string);
     void setAge(int);

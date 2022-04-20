@@ -12,13 +12,11 @@
 #include "animal.h"
 using namespace std;
 
-
-
 void readDataFile(string fileName) {
     ifstream infile;
     infile.open(fileName);
     while (infile) {
-        
+
     }
 }
 int main() {
