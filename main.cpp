@@ -8,13 +8,22 @@
 #include <iostream>
 #include <fstream>
 #include <string>
+#include <vector>
 #include "animal.h"
 using namespace std;
 
-void readDataFile() {
+
+
+void readDataFile(string fileName) {
     ifstream infile;
-    infile.open("")
+    infile.open(fileName);
+    while (infile) {
+        
+    }
 }
 int main() {
-
+    string fileName = "Animal Shelter Data-05.csv";
+    readDataFile(fileName);
+    // cout << "Data file name to read from: " << endl;
+    // cin >> fileName;
 }

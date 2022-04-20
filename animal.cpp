@@ -7,6 +7,17 @@
 #include <string>
 using namespace std;
 
+Animal::Animal(string type, string name, int age, int weight, string breed, string color, string health, string sound) {
+    setType(type);
+    setName(name);
+    setAge(age);
+    setWeight(weight);
+    setBreed(breed);
+    setColor(color);
+    setHealth(health);
+    setSound(sound);
+}
+
 void Animal::setType(string newType) {
     type = newType;
 }
