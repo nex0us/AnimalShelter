@@ -15,7 +15,7 @@
 
 #ifndef ANIMALSHELTER_CAT_H
 #define ANIMALSHELTER_CAT_H
-#include <animal.h>
+#include "animal.h"
 #include <string>
 
 using namespace std;
