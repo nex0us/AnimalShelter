@@ -4,10 +4,29 @@
 
 #ifndef ANIMALSHELTER_ANIMAL_H
 #define ANIMALSHELTER_ANIMAL_H
+#include <string>
+using namespace std;
 
 
-class animal {
-
+class Animal {
+private:
+    string type;
+    string name;
+    int age;
+    int weight;
+    string breed;
+    string color;
+    string health;
+    string sound;
+public:
+    void setType(string);
+    void setName(string);
+    void setAge(int);
+    void setWeight(int);
+    void setBreed(string);
+    void setColor(string);
+    void setHealth(string);
+    void setSound(string);
 };
 
 
