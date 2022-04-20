@@ -14,9 +14,27 @@
 */
 
 #include <iostream>
-#include <cat.h>
+#include "cat.h"
 using namespace std;
+
 
 void Cat::setCatNbr(int newCatNbr) {
     catNbr = newCatNbr;
 }
+
+Cat::Cat() {
+    setType("cat");
+}
+
+Cat::Cat(int cat) {
+    setCatNbr(cat);
+}
+
+/*string type;
+string name;
+int age;
+int weight;
+string breed;
+string color;
+string health;
+string sound;*/

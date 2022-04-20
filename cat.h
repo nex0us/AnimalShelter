@@ -26,6 +26,8 @@ private:
     static int nbrOfCats;
     int catNbr;
 public:
+    Cat();
+    Cat(int);
     void setCatNbr(int);
 };
 
