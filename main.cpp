@@ -29,6 +29,24 @@ void readDataFile(string fileName) {
     }
 }
 
+void splitString(string tongueTwister, vector<string> &vec, vector< vector<string> > &vec2d){
+	string temp = "";
+    for(int i = 0; i < tongueTwister.length(); i++) {
+        
+        if(tongueTwister[i] == ' ') {
+            vec.push_back(temp);
+            temp = "";
+        }
+        else {
+            temp.push_back(tongueTwister[i]);
+        }
+            
+    }
+    vec.push_back(temp);
+    vec2d.push_back(vec);
+    vec.clear();
+} //splitString
+
 void animalCreator() {
     //commas followed by non alpha are not initialized
     for (int i = 0; i < origData.size(); i++) {
