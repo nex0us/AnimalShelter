@@ -8,7 +8,8 @@
     Create cat class file for HW6
 
     Change Log and Features:
-    4/20/22 --> 
+    4/20/22 --> created Cat class (subclass of Animal)
+                added data members
 
     Notes:
 */
