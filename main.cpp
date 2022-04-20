@@ -1,4 +1,7 @@
-//
-// Created by Camden on 4/20/2022.
-//
+// Camden Alpert, David Sajdak, Abraham Cherian
+// AnimalShelter
+// 4/20/22
+/* Changelog:
+    -
+ */
 
