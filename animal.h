@@ -19,6 +19,7 @@ private:
     string health;
     string sound;
 public:
+    Animal();
     Animal(string, string, int, int, string, string, string, string);
     void setType(string);
     void setName(string);
