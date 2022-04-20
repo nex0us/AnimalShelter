@@ -8,7 +8,8 @@
     Create cat cpp file for HW6
 
     Change Log and Features:
-    4/20/22 --> 
+    4/20/22 --> created setCatNbr member function to set number for each instance of Cat class
+                created Cat default constructor and Cat paramterized constructor
 
     Notes:
 */
