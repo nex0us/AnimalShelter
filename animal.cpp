@@ -1,6 +1,8 @@
-//
 // Created by Camden on 4/20/2022.
-//
+/* Changelog:
+    - Added member functions
+    - Added default and parameterized constructors
+ */
 
 #include "animal.h"
 #include <iostream>

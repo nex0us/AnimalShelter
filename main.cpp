@@ -2,7 +2,10 @@
 // AnimalShelter
 // 4/20/22
 /* Changelog:
-    -
+    - Added readDataFile function for reading csv file
+    - Added splitString function (David's algorithm), and splitVectorStrings
+    - Added formatData, print2DVector, createAnimals functions
+    - Fixed error where commas were skipped by split functions
  */
 
 #include <iostream>
@@ -12,8 +15,8 @@
 #include "animal.h"
 using namespace std;
 
-vector<string> origData;
-vector<vector<string>> sepData;
+vector<string> origData; //csv data in lines
+vector<vector<string>> sepData; //stores the csv data by rows and columns
 vector<Animal> animals;
 
 void readDataFile(string fileName) {
@@ -30,6 +33,7 @@ void readDataFile(string fileName) {
     }
 }
 void splitString(string line) {
+    //splits a string into separate words
 	string temp = "";
     vector<string> vecTemp;
     for (int j = 0; j < line.length(); j++) {
@@ -44,11 +48,13 @@ void splitString(string line) {
     sepData.push_back(vecTemp);
 }
 void splitVectorStrings(vector<string> &vec) {
+    //splits vector strings into 2d vector words/sentences, store to sepData vector
     for (auto x: vec) {
         splitString(x);
     }
 }
 void formatData(vector<vector<string>> &vec) {
+    //Takes the separate words in a vector and turns them into blanks
     for (int i = 0; i < vec.size(); i++) {
         for (int j = 0; j < vec[i].size(); j++) {
             if (vec[i][j] == ",") {
