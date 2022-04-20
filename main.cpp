@@ -14,6 +14,7 @@ using namespace std;
 
 vector<string> origData;
 vector<vector<string>> sepData;
+vector<Animal> animals;
 
 void readDataFile(string fileName) {
     ifstream infile;
@@ -80,6 +81,7 @@ void createAnimals() {
         string health = sepData[i][6];
         string sound = sepData[i][7];
         Animal newAnimal(type,name,age,weight,breed,color,health,sound);
+        animals.push_back(newAnimal);
     }
 }
 int main() {
