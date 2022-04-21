@@ -90,6 +90,11 @@ void createAnimals() {
         animals.push_back(newAnimal);
     }
 }
+void classifyAnimals() {
+    for (int i = 0; i < animals.size(); i++) {
+
+    }
+}
 int main() {
     string fileName = "Animal Shelter Data-05.csv";
     readDataFile(fileName);
