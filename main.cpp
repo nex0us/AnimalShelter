@@ -13,6 +13,8 @@
 #include <string>
 #include <vector>
 #include "animal.h"
+#include "cat.h"
+#include "dog.h"
 using namespace std;
 
 vector<string> origData; //csv data in lines

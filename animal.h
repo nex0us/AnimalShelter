@@ -7,8 +7,8 @@
 #ifndef ANIMALSHELTER_ANIMAL_H
 #define ANIMALSHELTER_ANIMAL_H
 #include <string>
-#include "cat.h"
-#include "dog.h"
+//#include "cat.h"
+//#include "dog.h"
 using namespace std;
 
 
