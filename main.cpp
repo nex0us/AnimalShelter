@@ -18,6 +18,8 @@ using namespace std;
 vector<string> origData; //csv data in lines
 vector<vector<string>> sepData; //stores the csv data by rows and columns
 vector<Animal> animals;
+vector<Cat> cats;
+//vector<Dog> dogs;
 
 void readDataFile(string fileName) {
     ifstream infile;
@@ -92,7 +94,15 @@ void createAnimals() {
 }
 void classifyAnimals() {
     for (int i = 0; i < animals.size(); i++) {
-
+        if (animals[i].getType() == "Dog") {
+            //dogs.push_back(animals[i]);
+        } 
+        else if (animals[i].getType() == "Cat") {
+            //cats.push_back(animals[i]);
+        } 
+        else {
+            //nothing
+        }
     }
 }
 int main() {

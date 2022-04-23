@@ -2,6 +2,7 @@
 /* Changelog:
     - Added member functions
     - Added default and parameterized constructors
+    - defined getType member function
  */
 
 #include "animal.h"
@@ -53,4 +54,6 @@ void Animal::setHealth(string newHealth) {
 void Animal::setSound(string newSound) {
     sound = newSound;
 }
-
+string Animal::getType() {
+    return type;
+}
