@@ -6,6 +6,7 @@
     - Added splitString function (David's algorithm), and splitVectorStrings
     - Added formatData, print2DVector, createAnimals functions
     - Fixed error where commas were skipped by split functions
+    - created classify animals function to store objects in correct animal vector (cat, dog, etc.)
  */
 
 #include <iostream>
@@ -13,11 +14,21 @@
 #include <string>
 #include <vector>
 #include "animal.h"
+#include "animal.cpp"
+#include "cat.h"
+#include "cat.cpp"
+#include "dog.h"
+#include "dog.cpp"
 using namespace std;
 
 vector<string> origData; //csv data in lines
 vector<vector<string>> sepData; //stores the csv data by rows and columns
 vector<Animal> animals;
+vector<Animal> cats;
+vector<Animal> dogs;
+
+//function prototypes
+void classifyAnimals(Animal newAnimal);
 
 void readDataFile(string fileName) {
     ifstream infile;
@@ -88,8 +99,22 @@ void createAnimals() {
         string sound = sepData[i][7];
         Animal newAnimal(type,name,age,weight,breed,color,health,sound);
         animals.push_back(newAnimal);
+        cout << endl;
+        cout << animals[i].getType() << endl;
+        classifyAnimals(newAnimal);
     }
 }
+void classifyAnimals(Animal newAnimal) {
+    if (newAnimal.getType() == "dog") {
+            dogs.push_back(newAnimal);
+            cout << "In classify animals function, classified as: " << newAnimal.getType() << endl;
+    } 
+    else if (newAnimal.getType() == "cat") {
+            cats.push_back(newAnimal);
+            cout << "In classify animals function, classified as: " << newAnimal.getType() << endl;
+    }
+}
+
 int main() {
     string fileName = "Animal Shelter Data-05.csv";
     readDataFile(fileName);
