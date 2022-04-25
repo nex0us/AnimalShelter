@@ -44,7 +44,6 @@ Dog::Dog() {
 void Dog::introduceSelf() {
     Animal::introduceSelf();
     cout << "I am dog number: " << Dog::dogNbr << " out of " << Dog::nbrOfDogs << endl;
-
 }
 
 
