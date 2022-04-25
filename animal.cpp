@@ -11,14 +11,14 @@
 using namespace std;
 
 Animal::Animal() {
-    setType("");
-    setName("");
+    setType("unknown");
+    setName("unknown");
     setAge(0);
     setWeight(0);
-    setBreed("");
-    setColor("");
-    setHealth("");
-    setSound("");
+    setBreed("unknown");
+    setColor("unknown");
+    setHealth("unknown");
+    setSound("growl");
 }
 Animal::Animal(string type, string name, int age, int weight, string breed, string color, string health, string sound) {
     setType(type);
@@ -62,7 +62,16 @@ string Animal::getType() {
 void Animal::introduceSelf() {
     cout << Animal::sound << endl;
     cout << "My name is " << Animal::name << endl;
-    cout << "I am " << Animal::age << " years of age." << endl;
+    if (Animal::age != 0) {
+        cout << "I am " << Animal::age << " years of age." << endl;
+    } else {
+        cout << "My age is unknown." << endl;
+    }
+    if (Animal::weight != 0) {
+        cout << "I weigh " << Animal::weight << "." << endl;
+    } else {
+        cout << "My weight is unknown." << endl;
+    }
     cout << "I'm a " << Animal::type << ", and a " << Animal::breed << " breed." << endl;
     cout << "I am " << Animal::color << " in color." << endl;
     cout << "My health is " << Animal::health << "." << endl;
