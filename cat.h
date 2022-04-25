@@ -30,8 +30,13 @@ public:
     using Animal::Animal;
     Cat();
     Cat(int);
+<<<<<<< HEAD
     void setCatNbr();
     int getCatNbr();
+=======
+    void setCatNbr(int);
+    void introduceSelf();
+>>>>>>> 2c7d7a2c4c03783ae468af41530eb0f56668407a
 };
 
 
