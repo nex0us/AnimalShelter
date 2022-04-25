@@ -18,6 +18,7 @@ int Dog::nbrOfDogs = 0;
 //-----------------CONSTRUCTORS---------------------
 Dog::Dog() {
     setType("dog");
+    setSound("woof (generic dog sound)");
 } //Default constructor
 //----------------METHOD FUNCTIONS------------------
 void Dog::setDogNbr() {

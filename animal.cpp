@@ -21,7 +21,7 @@ Animal::Animal() {
     setBreed("unknown");
     setColor("unknown");
     setHealth("unknown");
-    setSound("growl");
+    setSound("growl (generic animal sound)");
 } //Default constructor
 Animal::Animal(string type, string name, int age, int weight, string breed, string color, string health, string sound) {
     setType(type);

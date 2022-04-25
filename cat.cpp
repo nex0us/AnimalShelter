@@ -23,6 +23,7 @@ int Cat::nbrOfCats = 0;
 //-----------------CONSTRUCTORS---------------------
 Cat::Cat() {
     setType("cat");
+    setSound("meow (generic cat sound)");
 } //Default Constructor
 //-----------------METHOD FUNCTIONS-----------------
 void Cat::setCatNbr() {

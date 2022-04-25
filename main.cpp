@@ -16,12 +16,12 @@
 #include <fstream>
 #include <string>
 #include <vector>
-#include "animal.h"
-#include "animal.cpp"
 #include "cat.h"
-#include "cat.cpp"
 #include "dog.h"
-#include "dog.cpp"
+#include "animal.h"
+//#include "animal.cpp"
+//#include "cat.cpp"
+//#include "dog.cpp"
 using namespace std;
 
 vector<string> origData; //csv data in lines
@@ -34,8 +34,7 @@ vector<Animal> adoptableAnimals;
 //function prototypes
 void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound);
 
-
-// data functions
+//-----------------DATA FUNCTIONS------------------
 void readDataFile(string fileName) {
     ifstream infile;
     infile.open(fileName);
@@ -47,7 +46,7 @@ void readDataFile(string fileName) {
         getline(infile,line);
         origData.push_back(line);
     }
-}
+} //readDataFile
 void splitString(string line) {
     //splits a string into separate words
 	string temp = "";
@@ -62,13 +61,13 @@ void splitString(string line) {
     }
     vecTemp.push_back(temp);
     sepData.push_back(vecTemp);
-}
+} //splitString
 void splitVectorStrings(vector<string> &vec) {
     //splits vector strings into 2d vector words/sentences, store to sepData vector
     for (auto x: vec) {
         splitString(x);
     }
-}
+} //splitVectorStrings
 void formatData(vector<vector<string>> &vec) {
     //Takes the separate words in a vector and turns them into blanks
     for (int i = 0; i < vec.size(); i++) {
@@ -78,7 +77,7 @@ void formatData(vector<vector<string>> &vec) {
             }
         }
     }
-}
+} //formatData
 void print2DVector(vector<vector<string>> vec) {
     for (int i = 0; i < vec.size(); i++) {
         for (int j = 0; j < vec[i].size(); j++) {
@@ -86,10 +85,8 @@ void print2DVector(vector<vector<string>> vec) {
         }
         cout << endl;
     }
-}
-
-
-// animal functions
+} //print2DVector
+//-----------------ANIMAL FUNCTIONS------------------
 void createAnimals() {
     //commas followed by non alpha are not initialized
     formatData(sepData);
@@ -107,8 +104,8 @@ void createAnimals() {
         animals.push_back(newAnimal);
         classifyAnimals(newAnimal,type,name,age,weight,breed,color,health,sound);
     }
-    animals.pop_back();
-}
+    animals.pop_back(); //Fix for data file reading last animal twice
+} //createAnimals
 void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound) {
     if (newAnimal.getType() == "dog") {
             Dog newDog(type,name,age,weight,breed,color,health,sound);
@@ -120,7 +117,7 @@ void classifyAnimals(Animal newAnimal, string type, string name, int age, int we
             newCat.setCatNbr();
             cats.push_back(newCat);
     }
-}
+} //classifyAnimals
 void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog, vector<Animal> &vecAnimal) {
     for (int cat = 0; cat < vecCat.size(); cat++) {
         vecCat[cat].introduceSelf();
@@ -139,7 +136,7 @@ void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog, vector<Animal> &
         }
     }
     cout << "\n\\----------------------------------------------------------\\" << endl;
-}
+} //introduceAnimals
 void showAdoptableAnimals() {
     for (int i = 0; i < animals.size(); i++) {
         if (animals[i].checkHealth() == "good") {
@@ -151,15 +148,14 @@ void showAdoptableAnimals() {
     for (int i = 0; i < adoptableAnimals.size(); i++) {
         adoptableAnimals[i].listAttributes();
     }
-}
+} //showAdoptableAnimals
 void reportNumber() {
     cout << "\nTotal number of animals created: " << animals[0].getNbrOfAnimals() - 2 << endl;
     cout << "Number of cats created: " << cats[0].getNbrOfCats() << endl;
     cout << "Number of dogs created: " << dogs[0].getNbrOfDogs() << endl;
     cout << "\n\\----------------------------------------------------------\\";
-}
-
-
+} //reportNumber
+//--------------------------------------------------
 int main() {
     string fileName = "Animal Shelter Data-05.csv";
     readDataFile(fileName);
@@ -169,4 +165,4 @@ int main() {
     reportNumber();
     introduceAnimals(cats, dogs, animals);
     showAdoptableAnimals();
-}
+} //main
