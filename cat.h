@@ -31,6 +31,7 @@ public:
     Cat();
     Cat(int);
     void setCatNbr(int);
+    void introduceSelf();
 };
 
 

@@ -31,11 +31,6 @@ Cat::Cat(int cat) {
     setCatNbr(cat);
 }
 
-/*string type;
-string name;
-int age;
-int weight;
-string breed;
-string color;
-string health;
-string sound;*/
+void Cat::introduceSelf() {
+    Animal::introduceSelf();
+}

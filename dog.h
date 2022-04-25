@@ -33,6 +33,7 @@ public:
     Dog();
     Dog(int);
     void setDogNbr(int);
+    void introduceSelf();
 };
 
 

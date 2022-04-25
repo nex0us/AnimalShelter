@@ -15,7 +15,7 @@
 */
 
 #include <iostream>
-#include "cat.h"
+#include "dog.h"
 using namespace std;
 
 
@@ -29,6 +29,10 @@ Dog::Dog() {
 
 Dog::Dog(int dog) {
     setDogNbr(dog);
+}
+
+void Dog::introduceSelf() {
+    Animal::introduceSelf();
 }
 
 
