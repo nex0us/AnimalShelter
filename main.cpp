@@ -10,6 +10,9 @@
     - finished reports for numbers, cats, dogs, and animals
     - added showAdoptableAnimals function
     - cleaned code
+
+    NOTE PLEASE READ:
+    - if using vs code, we have includes for .cpp files that should be uncommented for a certain vs code error
  */
 
 #include <iostream>
