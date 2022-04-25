@@ -22,6 +22,8 @@ private:
     string color;
     string health;
     string sound;
+    static int nbrOfAnimals;
+    int animalNbr;
 public:
     Animal();
     Animal(string, string, int, int, string, string, string, string);
@@ -34,6 +36,7 @@ public:
     void setHealth(string);
     void setSound(string);
     string getType();
+    void introduceSelf();
 };
 
 
