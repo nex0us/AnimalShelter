@@ -99,8 +99,6 @@ void createAnimals() {
         string sound = sepData[i][7];
         Animal newAnimal(type,name,age,weight,breed,color,health,sound);
         animals.push_back(newAnimal);
-        cout << endl;
-        cout << animals[i].getType() << endl;
         classifyAnimals(newAnimal,type,name,age,weight,breed,color,health,sound);
     }
 }
@@ -132,12 +130,19 @@ void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog) {
     }
 }
 
+void reportNumber() {
+    cout << "\nTotal number of animals created: " << endl;
+    cout << "Number of cats created: " << cats[0].getNbrOfCats() << endl;
+    cout << "Number of dogs created: " << dogs[0].getNbrOfDogs() << endl;
+}
+
 int main() {
     string fileName = "Animal Shelter Data-05.csv";
     readDataFile(fileName);
     splitVectorStrings(origData);
     print2DVector(sepData);
     createAnimals();
+    reportNumber();
     introduceAnimals(cats, dogs);
     // cout << "Data file name to read from: " << endl;
     // cin >> fileName;

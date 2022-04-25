@@ -29,6 +29,10 @@ int Cat::getCatNbr() {
     return catNbr;
 }
 
+int Cat::getNbrOfCats() {
+    return nbrOfCats;
+}
+
 Cat::Cat() {
     setType("cat");
 }

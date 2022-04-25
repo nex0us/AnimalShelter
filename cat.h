@@ -33,6 +33,7 @@ public:
     void setCatNbr();
     int getCatNbr();
     void introduceSelf();
+    int getNbrOfCats();
 };
 
 

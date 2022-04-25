@@ -29,6 +29,10 @@ int Dog::getDogNbr() {
     return dogNbr;
 }
 
+int Dog::getNbrOfDogs() {
+    return nbrOfDogs;
+}
+
 Dog::Dog() {
     setType("dog");
 }

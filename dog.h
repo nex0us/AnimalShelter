@@ -35,6 +35,7 @@ public:
     void setDogNbr();
     int getDogNbr();
     void introduceSelf();
+    int getNbrOfDogs();
 };
 
 
