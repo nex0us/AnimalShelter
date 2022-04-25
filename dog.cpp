@@ -35,14 +35,10 @@ Dog::Dog() {
 
 /*Dog::Dog(int dog) {
     setDogNbr(dog);
-<<<<<<< HEAD
 }*/
-=======
-}
 
 void Dog::introduceSelf() {
     Animal::introduceSelf();
 }
 
->>>>>>> 2c7d7a2c4c03783ae468af41530eb0f56668407a
 
