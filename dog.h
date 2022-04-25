@@ -1,4 +1,3 @@
-
 /*
     Dog Class file for Animal Shelter
     Abraham Cherian
@@ -23,7 +22,6 @@
 
 using namespace std;
 
-
 class Dog : public Animal {
 private:
     static int nbrOfDogs;
@@ -37,6 +35,5 @@ public:
     void introduceSelf();
     int getNbrOfDogs();
 };
-
 
 #endif //ANIMALSHELTER_DOG_H

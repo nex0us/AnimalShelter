@@ -21,11 +21,10 @@
 
 using namespace std;
 
-
 class Cat : public Animal {
 private:
-    static int nbrOfCats;
-    int catNbr;
+    static int nbrOfCats; //Tracks all cats
+    int catNbr; //Tracks specific cat id
 public:
     using Animal::Animal;
     Cat();
@@ -35,6 +34,5 @@ public:
     void introduceSelf();
     int getNbrOfCats();
 };
-
 
 #endif //ANIMALSHELTER_CAT_H

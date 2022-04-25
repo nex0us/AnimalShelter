@@ -9,7 +9,7 @@
 
     Change Log and Features:
     4/20/22 --> created setCatNbr member function to set number for each instance of Cat class
-                created Cat default constructor and Cat paramterized constructor
+                created Cat default constructor and Cat parameterized constructor
 
     Notes:
 */
@@ -20,29 +20,23 @@ using namespace std;
 
 int Cat::nbrOfCats = 0;
 
+//-----------------CONSTRUCTORS---------------------
+Cat::Cat() {
+    setType("cat");
+} //Default Constructor
+//-----------------METHOD FUNCTIONS-----------------
 void Cat::setCatNbr() {
     nbrOfCats++;
     catNbr = nbrOfCats;
-}
-
+} //Cat::setCatNbr
 int Cat::getCatNbr() {
     return catNbr;
-}
-
+} //Cat::getCatNbr
 int Cat::getNbrOfCats() {
     return nbrOfCats;
-}
-
-Cat::Cat() {
-    setType("cat");
-}
-
-/*Cat::Cat(int cat) {
-    setCatNbr(cat);
-}*/
-
+} //Cat::getNbrOfCats
 void Cat::introduceSelf() {
     Animal::introduceSelf();
     cout << "I am cat number: " << Cat::catNbr << " out of " << Cat::nbrOfCats << endl;
     cout << "I'm animal number " << Animal::animalNbr << "." << endl;
-}
+} //Cat::introduceSelf
