@@ -29,6 +29,7 @@ private:
     static int nbrOfDogs;
     int dogNbr;
 public:
+    using Animal::Animal;
     Dog();
     Dog(int);
     void setDogNbr(int);
