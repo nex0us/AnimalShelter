@@ -10,7 +10,20 @@
 #include <string>
 using namespace std;
 
-int Animal::nbrOfAnimals = 0;
+int Animal::nbrOfAnimals = 1;
+
+void Animal::setAnimalNbr() {
+    nbrOfAnimals++;
+    animalNbr = nbrOfAnimals;
+}
+
+int Animal::getAnimalNbr() {
+    return animalNbr;
+}
+
+int Animal::getNbrOfAnimals() {
+    return nbrOfAnimals;
+}
 
 Animal::Animal() {
     setType("unknown");
@@ -31,6 +44,7 @@ Animal::Animal(string type, string name, int age, int weight, string breed, stri
     setColor(color);
     setHealth(health);
     setSound(sound);
+    animalNbr = getNbrOfAnimals() - 1;
 }
 void Animal::setType(string newType) {
     type = newType;
@@ -70,12 +84,11 @@ void Animal::introduceSelf() {
         cout << "My age is unknown." << endl;
     }
     if (Animal::weight != 0) {
-        cout << "I weigh " << Animal::weight << "." << endl;
+        cout << "I weigh " << Animal::weight << " pounds." << endl;
     } else {
         cout << "My weight is unknown." << endl;
     }
     cout << "I'm a " << Animal::type << ", and a " << Animal::breed << " breed." << endl;
     cout << "I am " << Animal::color << " in color." << endl;
     cout << "My health is " << Animal::health << "." << endl;
-    cout << "I'm animal number " << Animal::animalNbr << "." << endl;
 }

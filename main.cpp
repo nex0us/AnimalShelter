@@ -7,6 +7,8 @@
     - Added formatData, print2DVector, createAnimals functions
     - Fixed error where commas were skipped by split functions
     - created classify animals function to store objects in correct animal vector (cat, dog, etc.)
+
+    notes: need to fix repeat reading of last animal
  */
 
 #include <iostream>
@@ -98,6 +100,7 @@ void createAnimals() {
         string health = sepData[i][6];
         string sound = sepData[i][7];
         Animal newAnimal(type,name,age,weight,breed,color,health,sound);
+        newAnimal.setAnimalNbr();
         animals.push_back(newAnimal);
         classifyAnimals(newAnimal,type,name,age,weight,breed,color,health,sound);
     }
@@ -121,17 +124,25 @@ void classifyAnimals(Animal newAnimal, string type, string name, int age, int we
     }
 }
 
-void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog) {
+void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog, vector<Animal> &vecAnimal) {
     for (int cat = 0; cat < vecCat.size(); cat++) {
         vecCat[cat].introduceSelf();
     }
     for (int dog = 0; dog < vecDog.size(); dog++) {
         vecDog[dog].introduceSelf();
     }
+    for (int animal = 0; animal < vecAnimal.size(); animal++) {
+        if (vecAnimal[animal].getType() == "cat" || vecAnimal[animal].getType() == "dog")
+            continue;
+        else {
+            vecAnimal[animal].introduceSelf();
+            cout << "I'm animal number " << vecAnimal[animal].getAnimalNbr() - 1 << "." << endl;
+        }
+    }
 }
 
 void reportNumber() {
-    cout << "\nTotal number of animals created: " << endl;
+    cout << "\nTotal number of animals created: " << animals[0].getNbrOfAnimals() << endl;
     cout << "Number of cats created: " << cats[0].getNbrOfCats() << endl;
     cout << "Number of dogs created: " << dogs[0].getNbrOfDogs() << endl;
 }
@@ -143,7 +154,7 @@ int main() {
     print2DVector(sepData);
     createAnimals();
     reportNumber();
-    introduceAnimals(cats, dogs);
+    introduceAnimals(cats, dogs, animals);
     // cout << "Data file name to read from: " << endl;
     // cin >> fileName;
 }

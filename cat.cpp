@@ -44,4 +44,5 @@ Cat::Cat() {
 void Cat::introduceSelf() {
     Animal::introduceSelf();
     cout << "I am cat number: " << Cat::catNbr << " out of " << Cat::nbrOfCats << endl;
+    cout << "I'm animal number " << Animal::animalNbr << "." << endl;
 }

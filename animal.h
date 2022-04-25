@@ -23,6 +23,8 @@ private:
     string health;
     string sound;
     static int nbrOfAnimals;
+    //int animalNbr;
+protected:
     int animalNbr;
 public:
     Animal();
@@ -37,6 +39,9 @@ public:
     void setSound(string);
     string getType();
     void introduceSelf();
+    void setAnimalNbr();
+    int getAnimalNbr();
+    int getNbrOfAnimals();
 };
 
 
