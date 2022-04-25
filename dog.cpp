@@ -15,24 +15,21 @@
 using namespace std;
 
 int Dog::nbrOfDogs = 0;
-
+//-----------------CONSTRUCTORS---------------------
+Dog::Dog() {
+    setType("dog");
+} //Default constructor
+//----------------METHOD FUNCTIONS------------------
 void Dog::setDogNbr() {
     nbrOfDogs++;
     dogNbr = nbrOfDogs;
 } //Dog::setDogNbr
-
 int Dog::getDogNbr() {
     return dogNbr;
 } //Dog::getDogNbr
-
 int Dog::getNbrOfDogs() {
     return nbrOfDogs;
 } //Dog:getNbrofDogs
-
-Dog::Dog() {
-    setType("dog");
-} //Default constructor
-
 void Dog::introduceSelf() {
     Animal::introduceSelf();
     cout << "I am dog number: " << Dog::dogNbr << " out of " << Dog::nbrOfDogs << endl;
