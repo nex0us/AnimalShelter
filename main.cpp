@@ -109,15 +109,17 @@ void classifyAnimals(Animal newAnimal, string type, string name, int age, int we
             Dog newDog(type,name,age,weight,breed,color,health,sound);
             newDog.setDogNbr();
             dogs.push_back(newDog);
-            cout << "In classify animals function, classified as: " << newDog.getType() << endl;
-            cout << "Dog number: " << newDog.getDogNbr() << endl;
+            //cout << "In classify animals function, classified as: " << newDog.getType() << endl;
+            //cout << "Dog number: " << newDog.getDogNbr() << endl;
+            newDog.introduceSelf();
     } 
     else if (newAnimal.getType() == "cat") {
             Cat newCat(type,name,age,weight,breed,color,health,sound);
             newCat.setCatNbr();
             cats.push_back(newCat);
-            cout << "In classify animals function, classified as: " << newCat.getType() << endl;
-            cout << "Cat number: " << newCat.getCatNbr() << endl;
+            //cout << "In classify animals function, classified as: " << newCat.getType() << endl;
+            //cout << "Cat number: " << newCat.getCatNbr() << endl;
+            newCat.introduceSelf();
     }
 }
 
