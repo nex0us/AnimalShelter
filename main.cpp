@@ -111,7 +111,7 @@ void classifyAnimals(Animal newAnimal, string type, string name, int age, int we
             dogs.push_back(newDog);
             //cout << "In classify animals function, classified as: " << newDog.getType() << endl;
             //cout << "Dog number: " << newDog.getDogNbr() << endl;
-            newDog.introduceSelf();
+            //newDog.introduceSelf();
     } 
     else if (newAnimal.getType() == "cat") {
             Cat newCat(type,name,age,weight,breed,color,health,sound);
@@ -119,7 +119,16 @@ void classifyAnimals(Animal newAnimal, string type, string name, int age, int we
             cats.push_back(newCat);
             //cout << "In classify animals function, classified as: " << newCat.getType() << endl;
             //cout << "Cat number: " << newCat.getCatNbr() << endl;
-            newCat.introduceSelf();
+            //newCat.introduceSelf();
+    }
+}
+
+void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog) {
+    for (int cat = 0; cat < vecCat.size(); cat++) {
+        vecCat[cat].introduceSelf();
+    }
+    for (int dog = 0; dog < vecDog.size(); dog++) {
+        vecDog[dog].introduceSelf();
     }
 }
 
@@ -129,6 +138,7 @@ int main() {
     splitVectorStrings(origData);
     print2DVector(sepData);
     createAnimals();
+    introduceAnimals(cats, dogs);
     // cout << "Data file name to read from: " << endl;
     // cin >> fileName;
 }

@@ -60,7 +60,7 @@ string Animal::getType() {
 //animal/cat/dog speak and
 //then say its name, age, color, health, etc
 void Animal::introduceSelf() {
-    cout << Animal::sound << endl;
+    cout << "\n" << Animal::sound << endl;
     cout << "My name is " << Animal::name << endl;
     if (Animal::age != 0) {
         cout << "I am " << Animal::age << " years of age." << endl;
