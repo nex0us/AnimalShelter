@@ -7,6 +7,7 @@
     - Added formatData, print2DVector, createAnimals functions
     - Fixed error where commas were skipped by split functions
     - created classify animals function to store objects in correct animal vector (cat, dog, etc.)
+    - finished reports for numbers, cats, dogs, and animals
 
     notes: need to fix repeat reading of last animal
  */
