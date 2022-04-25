@@ -42,6 +42,8 @@ public:
     void setAnimalNbr();
     int getAnimalNbr();
     int getNbrOfAnimals();
+    string checkHealth();
+    void listAttributes();
 };
 
 

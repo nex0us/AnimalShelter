@@ -17,11 +17,11 @@
 #include <string>
 #include <vector>
 #include "animal.h"
-#include "animal.cpp"
+//#include "animal.cpp"
 #include "cat.h"
-#include "cat.cpp"
+//#include "cat.cpp"
 #include "dog.h"
-#include "dog.cpp"
+//#include "dog.cpp"
 using namespace std;
 
 vector<string> origData; //csv data in lines
@@ -29,6 +29,7 @@ vector<vector<string>> sepData; //stores the csv data by rows and columns
 vector<Animal> animals;
 vector<Cat> cats;
 vector<Dog> dogs;
+vector<Animal> adoptableAnimals;
 
 //function prototypes
 void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound);
@@ -141,13 +142,24 @@ void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog, vector<Animal> &
         }
     }
 }
+void showAdoptableAnimals() {
+    for (int i = 0; i < animals.size(); i++) {
+        if (animals[i].checkHealth() == "good") {
+            adoptableAnimals.push_back(animals[i]);
+        }
+    }
+    cout << "\nAdoptable Animals: " << endl;
+    cout << "Number of adoptable animals: " << adoptableAnimals.size() << endl;
+    for (int i = 0; i < adoptableAnimals.size(); i++) {
+        adoptableAnimals[i].listAttributes();
+    }
+}
 
 void reportNumber() {
     cout << "\nTotal number of animals created: " << animals[0].getNbrOfAnimals() << endl;
     cout << "Number of cats created: " << cats[0].getNbrOfCats() << endl;
     cout << "Number of dogs created: " << dogs[0].getNbrOfDogs() << endl;
 }
-
 int main() {
     string fileName = "Animal Shelter Data-05.csv";
     readDataFile(fileName);
@@ -156,6 +168,7 @@ int main() {
     createAnimals();
     reportNumber();
     introduceAnimals(cats, dogs, animals);
+    showAdoptableAnimals();
     // cout << "Data file name to read from: " << endl;
     // cin >> fileName;
 }

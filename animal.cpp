@@ -92,3 +92,13 @@ void Animal::introduceSelf() {
     cout << "I am " << Animal::color << " in color." << endl;
     cout << "My health is " << Animal::health << "." << endl;
 }
+
+string Animal::checkHealth() {
+    return health;
+}
+
+void Animal::listAttributes() {
+    cout << "Name: " << name << ", Type: " << type << ", Breed: " << breed
+        << ", Color: " << color << ", Age: " << age << ", Weight: " << weight <<
+        ", Health: " << health << endl;
+}
