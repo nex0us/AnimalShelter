@@ -30,7 +30,8 @@ public:
     using Animal::Animal;
     Cat();
     Cat(int);
-    void setCatNbr(int);
+    void setCatNbr();
+    int getCatNbr();
 };
 
 

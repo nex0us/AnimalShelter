@@ -18,17 +18,22 @@
 #include "cat.h"
 using namespace std;
 
+int Dog::nbrOfDogs = 0;
 
-void Dog::setDogNbr(int newDogNbr) {
-    dogNbr = newDogNbr;
+void Dog::setDogNbr() {
+    nbrOfDogs++;
+    dogNbr = nbrOfDogs;
+}
+
+int Dog::getDogNbr() {
+    return dogNbr;
 }
 
 Dog::Dog() {
     setType("dog");
 }
 
-Dog::Dog(int dog) {
+/*Dog::Dog(int dog) {
     setDogNbr(dog);
-}
-
+}*/
 

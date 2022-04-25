@@ -32,7 +32,8 @@ public:
     using Animal::Animal;
     Dog();
     Dog(int);
-    void setDogNbr(int);
+    void setDogNbr();
+    int getDogNbr();
 };
 
 

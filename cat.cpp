@@ -18,24 +18,21 @@
 #include "cat.h"
 using namespace std;
 
+int Cat::nbrOfCats = 0;
 
-void Cat::setCatNbr(int newCatNbr) {
-    catNbr = newCatNbr;
+void Cat::setCatNbr() {
+    nbrOfCats++;
+    catNbr = nbrOfCats;
+}
+
+int Cat::getCatNbr() {
+    return catNbr;
 }
 
 Cat::Cat() {
     setType("cat");
 }
 
-Cat::Cat(int cat) {
+/*Cat::Cat(int cat) {
     setCatNbr(cat);
-}
-
-/*string type;
-string name;
-int age;
-int weight;
-string breed;
-string color;
-string health;
-string sound;*/
+}*/

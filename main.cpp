@@ -107,14 +107,17 @@ void createAnimals() {
 void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound) {
     if (newAnimal.getType() == "dog") {
             Dog newDog(type,name,age,weight,breed,color,health,sound);
+            newDog.setDogNbr();
             dogs.push_back(newDog);
             cout << "In classify animals function, classified as: " << newDog.getType() << endl;
+            cout << "Dog number: " << newDog.getDogNbr() << endl;
     } 
     else if (newAnimal.getType() == "cat") {
             Cat newCat(type,name,age,weight,breed,color,health,sound);
+            newCat.setCatNbr();
             cats.push_back(newCat);
             cout << "In classify animals function, classified as: " << newCat.getType() << endl;
-            //increment cat number here
+            cout << "Cat number: " << newCat.getCatNbr() << endl;
     }
 }
 
