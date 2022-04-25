@@ -10,6 +10,8 @@
 #include <string>
 using namespace std;
 
+int Animal::nbrOfAnimals = 0;
+
 Animal::Animal() {
     setType("unknown");
     setName("unknown");
