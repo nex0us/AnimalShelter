@@ -1,6 +1,6 @@
 /*
     Dog file for Animal Shelter
-    Abraham Cherian
+    Camden Alpert, David Sajdak, Abraham Cherian
     4/20/22 to 4/27/22
     CS1337.010
 

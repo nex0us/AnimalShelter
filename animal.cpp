@@ -1,4 +1,4 @@
-// Created by Camden on 4/20/2022.
+// Camden Alpert, David Sajdak, Abraham Cherian
 /* Changelog:
     - Added member functions
     - Added default and parameterized constructors

@@ -8,8 +8,8 @@
     - Fixed error where commas were skipped by split functions
     - created classify animals function to store objects in correct animal vector (cat, dog, etc.)
     - finished reports for numbers, cats, dogs, and animals
-
-    notes: need to fix repeat reading of last animal
+    - added showAdoptableAnimals function
+    - cleaned code
  */
 
 #include <iostream>
@@ -17,11 +17,11 @@
 #include <string>
 #include <vector>
 #include "animal.h"
-//#include "animal.cpp"
+#include "animal.cpp"
 #include "cat.h"
-//#include "cat.cpp"
+#include "cat.cpp"
 #include "dog.h"
-//#include "dog.cpp"
+#include "dog.cpp"
 using namespace std;
 
 vector<string> origData; //csv data in lines
@@ -34,6 +34,8 @@ vector<Animal> adoptableAnimals;
 //function prototypes
 void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound);
 
+
+// data functions
 void readDataFile(string fileName) {
     ifstream infile;
     infile.open(fileName);
@@ -44,7 +46,6 @@ void readDataFile(string fileName) {
         }
         getline(infile,line);
         origData.push_back(line);
-        cout << line << endl;
     }
 }
 void splitString(string line) {
@@ -86,15 +87,15 @@ void print2DVector(vector<vector<string>> vec) {
         cout << endl;
     }
 }
+
+
+// animal functions
 void createAnimals() {
     //commas followed by non alpha are not initialized
     formatData(sepData);
-    //print2DVector(sepData);
     for (int i = 0; i < sepData.size(); i++) {
         string type = sepData[i][0];
         string name = sepData[i][1];
-        //cout << sepData[i][2] << endl;
-        //cout << sepData[i][3] << endl;
         int age = (sepData[i][2] == "" ? 0 : stoi(sepData[i][2]));
         int weight = (sepData[i][3] == "" ? 0 : stoi(sepData[i][3]));
         string breed = sepData[i][4];
@@ -106,33 +107,29 @@ void createAnimals() {
         animals.push_back(newAnimal);
         classifyAnimals(newAnimal,type,name,age,weight,breed,color,health,sound);
     }
+    animals.pop_back();
 }
 void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound) {
     if (newAnimal.getType() == "dog") {
             Dog newDog(type,name,age,weight,breed,color,health,sound);
             newDog.setDogNbr();
             dogs.push_back(newDog);
-            //cout << "In classify animals function, classified as: " << newDog.getType() << endl;
-            //cout << "Dog number: " << newDog.getDogNbr() << endl;
-            //newDog.introduceSelf();
     } 
     else if (newAnimal.getType() == "cat") {
             Cat newCat(type,name,age,weight,breed,color,health,sound);
             newCat.setCatNbr();
             cats.push_back(newCat);
-            //cout << "In classify animals function, classified as: " << newCat.getType() << endl;
-            //cout << "Cat number: " << newCat.getCatNbr() << endl;
-            //newCat.introduceSelf();
     }
 }
-
 void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog, vector<Animal> &vecAnimal) {
     for (int cat = 0; cat < vecCat.size(); cat++) {
         vecCat[cat].introduceSelf();
     }
+    cout << "\n\\----------------------------------------------------------\\";
     for (int dog = 0; dog < vecDog.size(); dog++) {
         vecDog[dog].introduceSelf();
     }
+    cout << "\n\\----------------------------------------------------------\\" << endl;
     for (int animal = 0; animal < vecAnimal.size(); animal++) {
         if (vecAnimal[animal].getType() == "cat" || vecAnimal[animal].getType() == "dog")
             continue;
@@ -141,6 +138,7 @@ void introduceAnimals(vector<Cat> &vecCat, vector<Dog> &vecDog, vector<Animal> &
             cout << "I'm animal number " << vecAnimal[animal].getAnimalNbr() - 1 << "." << endl;
         }
     }
+    cout << "\n\\----------------------------------------------------------\\" << endl;
 }
 void showAdoptableAnimals() {
     for (int i = 0; i < animals.size(); i++) {
@@ -154,21 +152,21 @@ void showAdoptableAnimals() {
         adoptableAnimals[i].listAttributes();
     }
 }
-
 void reportNumber() {
-    cout << "\nTotal number of animals created: " << animals[0].getNbrOfAnimals() << endl;
+    cout << "\nTotal number of animals created: " << animals[0].getNbrOfAnimals() - 2 << endl;
     cout << "Number of cats created: " << cats[0].getNbrOfCats() << endl;
     cout << "Number of dogs created: " << dogs[0].getNbrOfDogs() << endl;
+    cout << "\n\\----------------------------------------------------------\\";
 }
+
+
 int main() {
     string fileName = "Animal Shelter Data-05.csv";
     readDataFile(fileName);
     splitVectorStrings(origData);
-    print2DVector(sepData);
+    //print2DVector(sepData);
     createAnimals();
     reportNumber();
     introduceAnimals(cats, dogs, animals);
     showAdoptableAnimals();
-    // cout << "Data file name to read from: " << endl;
-    // cin >> fileName;
 }
