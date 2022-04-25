@@ -27,6 +27,7 @@ private:
     static int nbrOfCats;
     int catNbr;
 public:
+    using Animal::Animal;
     Cat();
     Cat(int);
     void setCatNbr(int);

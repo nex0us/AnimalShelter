@@ -24,11 +24,11 @@ using namespace std;
 vector<string> origData; //csv data in lines
 vector<vector<string>> sepData; //stores the csv data by rows and columns
 vector<Animal> animals;
-vector<Animal> cats;
-vector<Animal> dogs;
+vector<Cat> cats;
+vector<Dog> dogs;
 
 //function prototypes
-void classifyAnimals(Animal newAnimal);
+void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound);
 
 void readDataFile(string fileName) {
     ifstream infile;
@@ -101,17 +101,20 @@ void createAnimals() {
         animals.push_back(newAnimal);
         cout << endl;
         cout << animals[i].getType() << endl;
-        classifyAnimals(newAnimal);
+        classifyAnimals(newAnimal,type,name,age,weight,breed,color,health,sound);
     }
 }
-void classifyAnimals(Animal newAnimal) {
+void classifyAnimals(Animal newAnimal, string type, string name, int age, int weight, string breed, string color, string health, string sound) {
     if (newAnimal.getType() == "dog") {
-            dogs.push_back(newAnimal);
-            cout << "In classify animals function, classified as: " << newAnimal.getType() << endl;
+            Dog newDog(type,name,age,weight,breed,color,health,sound);
+            dogs.push_back(newDog);
+            cout << "In classify animals function, classified as: " << newDog.getType() << endl;
     } 
     else if (newAnimal.getType() == "cat") {
-            cats.push_back(newAnimal);
-            cout << "In classify animals function, classified as: " << newAnimal.getType() << endl;
+            Cat newCat(type,name,age,weight,breed,color,health,sound);
+            cats.push_back(newCat);
+            cout << "In classify animals function, classified as: " << newCat.getType() << endl;
+            //increment cat number here
     }
 }
 
